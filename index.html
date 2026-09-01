@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Jaleel Qurashi - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        body { background-color: #0b0f19; color: #f1f5f9; line-height: 1.7; overflow-x: hidden; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: rgba(11, 15, 25, 0.85); backdrop-filter: blur(12px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #fff; }
+        .logo span { color: #38bdf8; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #94a3b8; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        nav ul li a:hover { color: #38bdf8; }
+        .hero { min-height: 90vh; display: flex; align-items: center; justify-content: space-between; padding: 0 8%; background: radial-gradient(circle at 70% 30%, #1e1b4b 0%, #0b0f19 70%); gap: 40px; }
+        .hero-content { flex: 1; }
+        .hero-content h3 { font-size: 1.2rem; color: #38bdf8; margin-bottom: 10px; font-weight: 600; }
+        .hero-content h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; color: #fff; line-height: 1.2; }
+        .hero-content p { font-size: 1.05rem; color: #94a3b8; margin-bottom: 30px; }
+        .hero-img-container { flex: 1; display: flex; justify-content: center; }
+        .profile-pic { width: 270px; height: 270px; border-radius: 50%; object-fit: cover; border: 4px solid #38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); animation: floatImage 4s ease-in-out infinite; }
+        .hero-btns { display: flex; gap: 15px; }
+        .btn { padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; }
+        .primary-btn { background: linear-gradient(135deg, #38bdf8, #0284c7); color: #0b0f19; }
+        .secondary-btn { border: 2px solid #334155; color: #f1f5f9; background: transparent; }
+        .section { padding: 80px 8%; text-align: center; }
+        .section h2 { font-size: 2.3rem; margin-bottom: 15px; color: #fff; position: relative; display: inline-block; }
+        .section h2::after { content: ''; position: absolute; width: 50%; height: 3px; background: #38bdf8; bottom: -8px; left: 25%; border-radius: 2px; }
+        .section-subtitle { color: #94a3b8; margin-bottom: 50px; font-size: 1.05rem; }
+        .bg-alt { background-color: #0f172a; }
+        .about-card { max-width: 800px; margin: 0 auto; background: #111827; padding: 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left; position: relative; }
+        .about-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #38bdf8; }
+        .about-card p { color: #cbd5e1; font-size: 1.1rem; margin-bottom: 15px; }
+        .skills-grid, .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; margin-top: 20px; }
+        .skill-card, .project-card { background: #111827; padding: 35px 25px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left; transition: 0.4s; }
+        .skill-card:hover, .project-card:hover { transform: translateY(-8px); border-color: #38bdf8; }
+        .skill-card i { font-size: 2.5rem; color: #38bdf8; margin-bottom: 20px; }
+        .skill-card h3, .project-card h3 { color: #fff; margin-bottom: 10px; font-size: 1.25rem; }
+        .skill-card p, .project-card p { color: #94a3b8; font-size: 0.95rem; }
+        .project-card { text-align: center; }
+        .contact-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
+        .contact-item { background: #111827; padding: 25px 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 15px; }
+        .contact-item i { font-size: 1.8rem; color: #38bdf8; }
+        .contact-info-text h4 { color: #fff; font-size: 0.95rem; margin-bottom: 3px; }
+        .contact-info-text p, .contact-info-text a { color: #94a3b8; font-size: 1rem; text-decoration: none; }
+        .contact-info-text a:hover { color: #38bdf8; }
+        footer { text-align: center; padding: 30px; background: #07090f; color: #64748b; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        @keyframes floatImage { 0% { transform: translateY(0); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0); } }
+        @media(max-width: 900px) { .hero { flex-direction: column-reverse; text-align: center; padding: 60px 5%; } .hero-btns { justify-content: center; } .hero-content h1 { font-size: 2.2rem; } .profile-pic { width: 220px; height: 220px; } nav ul { display: none; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Jaleel<span>.</span>Creative</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#projects">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h3>Hello, I'm</h3>
+            <h1>Muhammad Jaleel Qurashi</h1>
+            <p>Elevating Visual Identities & Streamlining Digital Operations through Advanced Graphic Design & Corporate Data Mastery.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn primary-btn">Explore Portfolio</a>
+                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+            </div>
+        </div>
+        <div class="hero-img-container">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAP//////////////////////////////////////////////////////////////////////////////////////wgALCAE7ATsBAREA/8QAHwAAAQEBAQEBAQEBAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/j4u/tHfBv4BeIfgj4U+JPjW18L61+0F8Rr74XfCPT7jTtYvn8ZePLHwP4s+I1z4fhuNO067t9PlHgzwN4r1H7XfTWtjv0r7OJvtFxBFL03jj9pj9nP4b+F/hB408cfFvwrovhj9oDxh4L+H/AMGNfWbU9TsPH3j34g/af+EF8PaNbaTpt1qC3XiprSX+ydSubW30m9mEcUOoNJNEsn8o/7VX/AARm/bd+Lv8AwU8/ZU/bU07xl8PfGnwB+Ff7QnhL4reLfB2p+JvE3w9u/gl4G8D/wDCe+ILH/hEfh/L4U8W6N4q8QeJb/xl9g8W+F9b1LwjZa2+g6VqE+pafq8+q6br3vX/Bav9nn9p79l34x2P/BSj/gnX8Vf2gvjF8ZfiR8cPhL4s/bE+G/jv4v678R/C/7OvgbwH4Z+Ivhe68b+CPB2k/E2D/hWnwn+E3j3xxpvi3xj4P8P+C9d0r4p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" alt="Muhammad Jaleel Qurashi" class="profile-pic">
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>Professional Profile</h2>
+        <p class="section-subtitle">A glimpse into my professional journey and passion</p>
+        <div class="about-card">
+            <p>I am a seasoned <strong>Graphic Designer and Data Management Specialist</strong> based in <strong>Sialkot, Pakistan</strong>. With a profound eye for precision aesthetics and layout structuring, I breathe life into brands through compelling vector graphics, high-end packaging designs, and distinct visual storytelling.</p>
+            <p>Alongside my creative prowess, I possess high-level technical expertise in professional corporate automation, leveraging advanced tools like <strong>MS Excel</strong> and <strong>MS Word</strong> to engineer streamlined workflows, data architecture, and pristine documentation.</p>
+        </div>
+    </section>
+
+    <section id="expertise" class="section bg-alt">
+        <h2>Core Competencies</h2>
+        <p class="section-subtitle">Areas of specialized professional mastery</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fas fa-vector-square"></i>
+                <h3>Graphic & Vector Design</h3>
+                <p>Mastery in CorelDRAW & Photoshop for creating striking brand identities, custom vector layouts, and elite product packaging artwork.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-file-excel"></i>
+                <h3>Advanced MS Excel</h3>
+                <p>Designing sophisticated spreadsheets, automated reporting templates, data analysis models, and advanced dynamic dashboards.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-file-word"></i>
+                <h3>Professional MS Word</h3>
+                <p>Crafting flawless corporate documents, formal business proposals, advanced formatting templates, and professional layout designs.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Layout Concepts</h3>
+                <p>Integrating modern aesthetic principles, fluid responsive interfaces, and digital presentation standards for the web.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Featured Creative Works</h2>
+        <p class="section-subtitle">Selected showcases of design and technical execution</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <i class="fas fa-box-open" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
+                <h3>Product Packaging & Branding</h3>
+                <p>Crafting market-ready, eye-catching packaging covers and brand vectorizations with acute structural accuracy using CorelDRAW.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-chart-line" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
+                <h3>Automated Excel Models</h3>
+                <p>Developing data-driven tracking tools and financial accounting systems maximizing operational efficiency in MS Excel.</p>
+            </div>
+            <div class="project-card">
+                <i class="fas fa-pen-nib" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
+                <h3>Visual Art & Digital Assets</h3>
+                <p>High-resolution image compositions, post-production editing, and creative vector illustrations tailored for diverse commercial platforms.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section bg-alt">
+        <h2>Let's Collaborate</h2>
+        <p class="section-subtitle">Reach out to discuss your next project or professional requirement</p>
+        
+        <div class="contact-container">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div class="contact-info-text">
+                    <h4>Email Address</h4>
+                    <a href="mailto:qureshi_jaleel@yahoo.com">qureshi_jaleel@yahoo.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div class="contact-info-text">
+                    <h4>Phone / WhatsApp</h4>
+                    <a href="tel:00923351732197">+0092-335-1732197</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="contact-info-text">
+                    <h4>Location</h4>
+                    <p>Sialkot, Pakistan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Muhammad Jaleel Qurashi. All Rights Reserved. Designed with Excellence.</p>
+    </footer>
+
+</body>
+</html>
