@@ -1,3 +1,4 @@
+/* Container CSS */
 .hero-img-container { 
     flex: 1; 
     display: flex; 
@@ -5,27 +6,19 @@
     align-items: center; 
 }
 
+/* Updated Profile Picture CSS */
 .profile-pic { 
     width: 270px; 
     height: 270px; 
     border-radius: 50%; 
     object-fit: cover; 
+    object-position: center;
     border: 4px solid #38bdf8; 
     box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); 
     animation: floatImage 4s ease-in-out infinite; 
     display: block;
-    background-color: #1e293b; /* تصویر لوڈ نہ ہونے کی صورت میں بیک گراؤنڈ */
-}
-.profile-pic { 
-    width: 270px; 
-    height: 270px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 4px solid #38bdf8; 
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); 
-    animation: floatImage 4s ease-in-out infinite; 
-    display: block;
-    background-color: #1e293b; /* تصویر لوڈ نہ ہونے کی صورت میں ڈارک بیک گراؤنڈ */
-    font-size: 0;             /* الٹ ٹیکسٹ کا سائز زیرو تاکہ باہر نہ نکلے */
+    background-color: #1e293b;
+    font-size: 0;
     color: transparent;
+    overflow: hidden;
 }
