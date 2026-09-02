@@ -21,8 +21,13 @@
         .hero-content h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 15px; color: #fff; line-height: 1.2; }
         .hero-content p { font-size: 1.05rem; color: #94a3b8; margin-bottom: 30px; }
         
-        /* Fixed Container & Image Styling */
-        .hero-img-container { flex: 1; display: flex; justify-content: center; align-items: center; }
+        /* Updated Container & Profile Image Styling */
+        .hero-img-container { 
+            flex: 1; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+        }
         .profile-pic { 
             width: 270px; 
             height: 270px; 
@@ -33,6 +38,8 @@
             animation: floatImage 4s ease-in-out infinite; 
             display: block;
             background-color: #1e293b;
+            font-size: 0;
+            color: transparent;
         }
 
         .hero-btns { display: flex; gap: 15px; }
@@ -57,136 +64,4 @@
         .contact-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 30px; }
         .contact-item { background: #111827; padding: 25px 35px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.05); display: flex; align-items: center; gap: 15px; }
         .contact-item i { font-size: 1.8rem; color: #38bdf8; }
-        .contact-info-text h4 { color: #fff; font-size: 0.95rem; margin-bottom: 3px; }
-        .contact-info-text p, .contact-info-text a { color: #94a3b8; font-size: 1rem; text-decoration: none; }
-        .contact-info-text a:hover { color: #38bdf8; }
-        footer { text-align: center; padding: 30px; background: #07090f; color: #64748b; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
-        @keyframes floatImage { 0% { transform: translateY(0); } 50% { transform: translateY(-12px); } 100% { transform: translateY(0); } }
-        @media(max-width: 900px) { .hero { flex-direction: column-reverse; text-align: center; padding: 60px 5%; } .hero-btns { justify-content: center; } .hero-content h1 { font-size: 2.2rem; } .profile-pic { width: 220px; height: 220px; } nav ul { display: none; } }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">Jaleel<span>.</span>Creative</div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#projects">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <div class="hero-content">
-            <h3>Hello, I'm</h3>
-            <h1>Muhammad Jaleel Qurashi</h1>
-            <p>Elevating Visual Identities & Streamlining Digital Operations through Advanced Graphic Design & Corporate Data Mastery.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn primary-btn">Explore Portfolio</a>
-                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
-            </div>
-        </div>
-        <div class="hero-img-container">
-            <!-- Active Live Image Link -->
-            <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/YOUR_IMAGE_NAME.jpg" alt="" class="profile-pic">
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <h2>Professional Profile</h2>
-        <p class="section-subtitle">A glimpse into my professional journey and passion</p>
-        <div class="about-card">
-            <p>I am a seasoned <strong>Graphic Designer and Data Management Specialist</strong> based in <strong>Sialkot, Pakistan</strong>. With a profound eye for precision aesthetics and layout structuring, I breathe life into brands through compelling vector graphics, high-end packaging designs, and distinct visual storytelling.</p>
-            <p>Alongside my creative prowess, I possess high-level technical expertise in professional corporate automation, leveraging advanced tools like <strong>MS Excel</strong> and <strong>MS Word</strong> to engineer streamlined workflows, data architecture, and pristine documentation.</p>
-        </div>
-    </section>
-
-    <section id="expertise" class="section bg-alt">
-        <h2>Core Competencies</h2>
-        <p class="section-subtitle">Areas of specialized professional mastery</p>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <i class="fas fa-vector-square"></i>
-                <h3>Graphic & Vector Design</h3>
-                <p>Mastery in CorelDRAW & Photoshop for creating striking brand identities, custom vector layouts, and elite product packaging artwork.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-file-excel"></i>
-                <h3>Advanced MS Excel</h3>
-                <p>Designing sophisticated spreadsheets, automated reporting templates, data analysis models, and advanced dynamic dashboards.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-file-word"></i>
-                <h3>Professional MS Word</h3>
-                <p>Crafting flawless corporate documents, formal business proposals, advanced formatting templates, and professional layout designs.</p>
-            </div>
-            <div class="skill-card">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Web Layout Concepts</h3>
-                <p>Integrating modern aesthetic principles, fluid responsive interfaces, and digital presentation standards for the web.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <h2>Featured Creative Works</h2>
-        <p class="section-subtitle">Selected showcases of design and technical execution</p>
-        <div class="projects-grid">
-            <div class="project-card">
-                <i class="fas fa-box-open" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
-                <h3>Product Packaging & Branding</h3>
-                <p>Crafting market-ready, eye-catching packaging covers and brand vectorizations with acute structural accuracy using CorelDRAW.</p>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-chart-line" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
-                <h3>Automated Excel Models</h3>
-                <p>Developing data-driven tracking tools and financial accounting systems maximizing operational efficiency in MS Excel.</p>
-            </div>
-            <div class="project-card">
-                <i class="fas fa-pen-nib" style="font-size: 2.2rem; color: #38bdf8; margin-bottom: 15px;"></i>
-                <h3>Visual Art & Digital Assets</h3>
-                <p>High-resolution image compositions, post-production editing, and creative vector illustrations tailored for diverse commercial platforms.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section bg-alt">
-        <h2>Let's Collaborate</h2>
-        <p class="section-subtitle">Reach out to discuss your next project or professional requirement</p>
-        
-        <div class="contact-container">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <div class="contact-info-text">
-                    <h4>Email Address</h4>
-                    <a href="mailto:qureshi_jaleel@yahoo.com">qureshi_jaleel@yahoo.com</a>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-phone-alt"></i>
-                <div class="contact-info-text">
-                    <h4>Phone / WhatsApp</h4>
-                    <a href="tel:00923351732197">+0092-335-1732197</a>
-                </div>
-            </div>
-
-            <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="contact-info-text">
-                    <h4>Location</h4>
-                    <p>Sialkot, Pakistan</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Muhammad Jaleel Qurashi. All Rights Reserved. Designed with Excellence.</p>
-    </footer>
-
-</body>
-</html>
+        .contact-info-text h4 { color
