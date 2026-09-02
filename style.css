@@ -1,0 +1,18 @@
+.hero-img-container { 
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.profile-pic { 
+    width: 270px; 
+    height: 270px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #38bdf8; 
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.4); 
+    animation: floatImage 4s ease-in-out infinite; 
+    display: block;
+    background-color: #1e293b; /* تصویر لوڈ نہ ہونے کی صورت میں بیک گراؤنڈ */
+}
